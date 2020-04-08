@@ -7,7 +7,7 @@ Create EC2 instance and enable port 8655 in security group to run your applicati
 ### Setup in EC2
 To install NodeJS :
 ```
-	$ curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash â€“
+	$ curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash –
 	$ sudo apt-get install nodejs
 ```
 To install Postgres :
@@ -24,6 +24,13 @@ Copy **webapp** folder to your EC2 instance.
 ```
  $ scp -i <pem file> -r webapp <EC2-instance-url>
 ```
+Install node dependencies in your EC2 instance.
+```
+ $ cd webapp
+ $ sudo npm i
+```
+
+
 ## Run the application
 Goto following folder: webapp 
 Run the server in EC2 instance with : pm2 start
